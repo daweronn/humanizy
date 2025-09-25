@@ -9,6 +9,7 @@ import WelcomeStep from '../pages/Onboarding/steps/WelcomeStep';
 import AgentConfigStep from '../pages/Onboarding/steps/AgentConfigStep';
 import IntegrationsStep from '../pages/Onboarding/steps/IntegrationsStep';
 import PortfolioStep from '../pages/Onboarding/steps/PortfolioStep';
+import SummaryStep from '../pages/Onboarding/steps/SummaryStep'; // Importe o SummaryStep
 
 const Dashboard = () => <div>Dashboard Page</div>;
 const Login = () => <div>Login Page</div>;
@@ -24,37 +25,37 @@ const router = createBrowserRouter([
     path: '/onboarding',
     element: <OnboardingLayout />,
     children: [
-      { 
-        index: true, 
-        element: <WelcomeStep />, 
+      {
+        index: true,
+        element: <WelcomeStep />,
         handle: { step: 1, layoutSize: 'narrow' } // Metadata da rota
       },
-      { 
-        path: 'agent-config', 
-        element: <AgentConfigStep />, 
+      {
+        path: 'agent-config',
+        element: <AgentConfigStep />,
         handle: { step: 2, layoutSize: 'narrow' } // Metadata da rota
       },
-      { 
-        path: 'integrations', 
-        element: <IntegrationsStep />, 
+      {
+        path: 'integrations',
+        element: <IntegrationsStep />,
         handle: { step: 3, layoutSize: 'wide' } // Metadata da rota
       },
-      { 
-        path: 'portfolio', 
-        element: <PortfolioStep />, 
+      {
+        path: 'portfolio',
+        element: <PortfolioStep />,
         handle: { step: 4, layoutSize: 'wide' } // Metadata da rota (corrigido para 4)
       },
+      {
+        path: 'summary', // Adicione a rota de resumo aqui
+        element: <SummaryStep />,
+        handle: { step: 5, layoutSize: 'narrow' }
+      }
     ],
   },
   {
     path: '/dashboard',
     element: <Dashboard />,
   },
-  { 
-        path: 'summary', 
-        element: <SummaryStep />, 
-        handle: { step: 5, layoutSize: 'narrow' } // Adicione a rota de resumo
-      }
 ]);
 
 // --- Router Component ---

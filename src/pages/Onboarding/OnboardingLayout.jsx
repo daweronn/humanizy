@@ -23,7 +23,8 @@ const OnboardingLayout = () => {
       '/onboarding': 1,
       '/onboarding/agent-config': 2,
       '/onboarding/integrations': 3,
-      // Adicione futuras rotas aqui
+      '/onboarding/portfolio': 4, // Adicionado para consistência
+      '/onboarding/summary': 5,      // ADICIONADO: Mapeia a rota de resumo para a etapa 5
     };
     setCurrentStep(pathMap[location.pathname] || 1);
   }, [location]);

@@ -27,7 +27,7 @@ const PortfolioStep = () => {
     // Crie a nova lista e atualize o contexto
     const newItems = [...items, { id: Date.now(), name: currentItemName }];
     setPortfolioItems(newItems);
-    
+
     setCurrentItemName('');
     setIsModalOpen(false);
   };
@@ -37,10 +37,10 @@ const PortfolioStep = () => {
     const newItems = items.filter(item => item.id !== id);
     setPortfolioItems(newItems);
   };
-  
+
   const handleNext = () => {
     console.log("Portfolio Items:", items); // Os dados estão no contexto!
-    navigate('/onboarding/faq');
+    navigate('/onboarding/summary'); // ALTERADO: Navega para a tela de resumo
   };
   const handleBack = () => { navigate('/onboarding/integrations'); };
 

@@ -24,15 +24,28 @@
   margin-bottom: 16px;
 }
 
+/* ADICIONADO: Container para o layout de duas colunas */
+.summary-body {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  align-items: stretch; /* Faz os cards terem a mesma altura */
+  margin: 16px 0;
+}
+
+/* ALTERADO: Ajustes nos cards para funcionarem com flexbox */
 .summary-details,
 .next-steps {
+  flex: 1; /* Faz com que ambos ocupem metade do espaço */
   width: 100%;
-  max-width: 400px;
+  max-width: none; /* Remove a largura máxima anterior */
   background-color: #F9FAFB;
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-md);
   padding: 24px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .summary-details h4,

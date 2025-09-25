@@ -11,7 +11,7 @@
 
 .onboarding-card {
   width: 100%;
-  max-width: 420px; /* De volta ao tamanho padrão estreito */
+  max-width: 420px; /* Tamanho padrão estreito */
   background-color: var(--color-surface);
   border-radius: var(--border-radius-lg);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
@@ -31,6 +31,13 @@
 .onboarding-footer {
   width: 100%;
 }
+
+/* Regra para a tela de integrações (larga) */
 .onboarding-card:has(.integrations-step-wrapper) {
   max-width: 1080px;
+}
+
+/* ALTERADO: Regra para a tela de resumo (agora mais larga) */
+.onboarding-card:has(.summary-container) {
+  max-width: 800px;
 }
