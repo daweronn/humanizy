@@ -16,8 +16,8 @@ const Input = ({ label, helperText, ...props }) => {
   // --- Render ---
   return (
     <div className="input-wrapper">
-      <label className="input-label">{label}</label>
       <input className="input-field" {...props} />
+      <label className="input-label">{label}</label>
       {helperText && <p className="input-helper-text">{helperText}</p>}
     </div>
   );

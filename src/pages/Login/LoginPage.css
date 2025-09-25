@@ -1,0 +1,139 @@
+/* src/pages/Login/LoginPage.css */
+
+.login-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #F9FAFB;
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* ALTERADO: Adicionado gradiente radial para o brilho de fundo */
+  background: radial-gradient(circle at 50% 30%, #4a2782, #2c1a4d 70%);
+  padding: 48px 40px; /* Ajustado padding horizontal */
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+}
+
+.login-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8px; /* Reduzido o espaço após o nome */
+}
+
+.login-logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 0 15px rgba(167, 139, 250, 0.5));
+}
+
+.login-brand-name {
+    font-size: 42px; /* Aumentado para mais destaque */
+    font-weight: 600;
+    padding-bottom: 50px;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    /* ADICIONADO: Glow no texto */
+    text-shadow: 0 0 20px rgba(230, 230, 255, 0.15);
+}
+
+.login-title {
+  font-size: 22px; /* Reduzido para menos destaque que a marca */
+  font-weight: 500;
+  color: #E5E7EB; /* Cor um pouco mais suave que branco puro */
+  margin-bottom: 40px; /* Aumentado espaço antes dos inputs */
+}
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Aumentado espaço entre os inputs */
+}
+
+/* --- Ajustes nos componentes reutilizados --- */
+
+.login-form .input-wrapper {
+  position: relative;
+}
+
+.login-form .input-field {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  padding-top: 16px;
+  padding-bottom: 8px; /* Ajuste no padding */
+}
+
+.login-form .input-helper-text {
+  display: none;
+}
+
+.login-form .input-label {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  transition: all 0.2s ease;
+  pointer-events: none;
+  background-color: transparent;
+}
+
+.login-form .input-field:focus + .input-label,
+.login-form .input-field:not(:placeholder-shown) + .input-label {
+  top: 6px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.login-form .input-field:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.3);
+}
+
+.forgot-password-link {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  align-self: flex-end;
+  margin-top: -12px; /* Puxa um pouco mais para cima */
+  margin-bottom: 12px; /* Adiciona mais espaço antes do botão */
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+.login-form .btn-primary {
+  padding: 16px 32px; /* Aumentado padding vertical */
+  margin-top: 8px;
+  background-color: var(--color-primary);
+  font-size: 16px;
+}
+
+.signup-link {
+  margin-top: 32px; /* Aumentado espaço */
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+.signup-link a {
+  color: #FFFFFF;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}

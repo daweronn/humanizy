@@ -1,0 +1,77 @@
+/* src/layouts/DashboardLayout.css */
+
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-color: #F9FAFB;
+  padding: 48px 24px;
+  transition: padding 0.3s ease; /* Adiciona transição suave */
+}
+
+.dashboard-card-layout {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  min-height: 900px;
+  max-height: calc(100vh - 96px);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease; /* Adiciona transição suave */
+}
+
+.dashboard-main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 32px 48px;
+  transition: padding 0.3s ease; /* Adiciona transição suave */
+}
+
+
+/* --- ADICIONADO: Media Queries para Responsividade --- */
+
+/* Para tablets e telas médias (até 992px) */
+@media (max-width: 992px) {
+  .dashboard-container {
+    padding: 24px 16px; /* Reduz o padding da página */
+  }
+
+  .dashboard-card-layout {
+    max-height: calc(100vh - 48px); /* Ajusta a altura máxima */
+    min-height: 0; /* Remove a altura mínima fixa que causava problemas */
+  }
+
+  .dashboard-main-content {
+    padding: 24px; /* Reduz o padding do conteúdo principal */
+  }
+}
+
+/* Para celulares (até 768px) */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 0; /* Remove todo o padding para o card ocupar a tela inteira */
+  }
+
+  .dashboard-card-layout {
+    height: 100vh;
+    max-height: 100vh;
+    width: 100vw;
+    border-radius: 0; /* Remove as bordas arredondadas */
+    border: none;
+    box-shadow: none; /* Remove a sombra */
+  }
+
+  /* Por padrão, esconde a sidebar em telas pequenas.
+     A lógica para exibi-la (com o botão de menu) seria feita com JavaScript. */
+  .sidebar {
+      display: none;
+  }
+
+  .dashboard-main-content {
+    padding: 24px 16px; /* Ajusta o padding para telas de celular */
+  }
+}

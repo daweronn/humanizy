@@ -24,7 +24,6 @@
   margin-bottom: 16px;
 }
 
-/* ADICIONADO: Container para o layout de duas colunas */
 .summary-body {
   display: flex;
   gap: 24px;
@@ -33,7 +32,6 @@
   margin: 16px 0;
 }
 
-/* ALTERADO: Ajustes nos cards para funcionarem com flexbox */
 .summary-details,
 .next-steps {
   flex: 1; /* Faz com que ambos ocupem metade do espaço */
@@ -71,4 +69,12 @@
 .summary-details li,
 .next-steps li {
   color: var(--color-text-secondary);
+}
+
+/* --- ADICIONADO: Bloco para Responsividade --- */
+@media (max-width: 768px) {
+  .summary-body {
+    flex-direction: column; /* Altera o layout para empilhar os cards */
+    gap: 16px; /* Reduz o espaçamento entre eles */
+  }
 }

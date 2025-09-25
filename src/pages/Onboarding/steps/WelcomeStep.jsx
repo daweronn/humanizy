@@ -1,44 +1,58 @@
 // src/pages/Onboarding/steps/WelcomeStep.jsx
 
-// --- Imports ---
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion'; // Importar motion
 import Button from '../../../components/common/Button/Button';
 import './WelcomeStep.css';
 
-// --- Organizational Comments ---
-// - Component: WelcomeStep
-//   - The first screen in the onboarding flow (New Design).
-
-// --- Component ---
 const WelcomeStep = () => {
-  // --- Hooks ---
   const navigate = useNavigate();
 
-  // --- Functions ---
   const handleStart = () => {
-    navigate('/onboarding/agent-config'); 
+    navigate('/onboarding/agent-config');
   };
-  
-  // --- Render ---
+
+  // Variante para o container orquestrar a animação dos filhos
+  const containerVariants = {
+    hidden: { opacity: 1 }, // Começa visível para não piscar
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15, // Intervalo entre a animação de cada item
+      },
+    },
+  };
+
+  // Variante para cada item (ilustração, textos, botão)
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { ease: 'easeOut' } },
+  };
+
   return (
-    <div className="welcome-step-container">
-      <div className="illustration-placeholder">
+    <motion.div
+      className="welcome-step-container"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.div className="illustration-placeholder" variants={itemVariants}>
         <img src="/image-welcome.png" alt="Ilustração de Boas-Vindas" />
-      </div>
-      
-      <h1>Welcome!</h1>
-      
-      <p>
+      </motion.div>
+
+      <motion.h1 variants={itemVariants}>Welcome!</motion.h1>
+
+      <motion.p variants={itemVariants}>
         Let's set up your AI agent.
         This will only take a few minutes.
-      </p>
+      </motion.p>
 
-      <div className="welcome-actions">
+      <motion.div className="welcome-actions" variants={itemVariants}>
         <Button onClick={handleStart} variant="primary">
           Get started
         </Button>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

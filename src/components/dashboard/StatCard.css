@@ -1,0 +1,38 @@
+/* src/components/dashboard/StatCard.css */
+
+.stat-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: 24px;
+  flex: 1;
+}
+
+.stat-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 12px;
+}
+
+.stat-change {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.stat-change.positive {
+  color: #10B981; /* Verde */
+}
+
+.stat-change.negative {
+  color: #EF4444; /* Vermelho */
+}
