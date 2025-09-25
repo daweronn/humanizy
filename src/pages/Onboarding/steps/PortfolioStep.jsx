@@ -7,36 +7,42 @@ import { motion } from 'framer-motion';
 import Button from '../../../components/common/Button/Button';
 import Modal from '../../../components/common/Modal/Modal';
 import Input from '../../../components/common/Input/Input';
+import { useOnboarding } from '../../../context/OnboardingContext'; // Importe nosso hook!
 import './PortfolioStep.css';
 
 // --- Component ---
 const PortfolioStep = () => {
   // --- Hooks ---
   const navigate = useNavigate();
+  const { onboardingData, setPortfolioItems } = useOnboarding(); // Use o contexto
+  const items = onboardingData.portfolioItems; // Pegue os itens do contexto
 
-  // --- State ---
-  const [items, setItems] = useState([]);
+  // --- State (apenas para o modal) ---
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentItemName, setCurrentItemName] = useState('');
 
   // --- Functions ---
   const handleAddItem = () => {
-    // Adiciona um novo item à lista e limpa o input do modal
     if (currentItemName.trim() === '') return;
-    setItems([...items, { id: Date.now(), name: currentItemName }]);
+    // Crie a nova lista e atualize o contexto
+    const newItems = [...items, { id: Date.now(), name: currentItemName }];
+    setPortfolioItems(newItems);
+    
     setCurrentItemName('');
     setIsModalOpen(false);
   };
 
   const handleDeleteItem = (id) => {
-    setItems(items.filter(item => item.id !== id));
+    // Crie a nova lista filtrada e atualize o contexto
+    const newItems = items.filter(item => item.id !== id);
+    setPortfolioItems(newItems);
   };
   
-  const handleNext = () => { /* navigate('/onboarding/faq'); */ };
+  const handleNext = () => {
+    console.log("Portfolio Items:", items); // Os dados estão no contexto!
+    navigate('/onboarding/faq');
+  };
   const handleBack = () => { navigate('/onboarding/integrations'); };
-
-  // --- Animation Variants ---
-  // ... (reutilize variantes de animação se desejar)
 
   // --- Render ---
   return (

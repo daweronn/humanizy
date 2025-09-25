@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       { 
         path: 'portfolio', 
         element: <PortfolioStep />, 
-        handle: { step: 3, layoutSize: 'wide' } // Metadata da rota
+        handle: { step: 4, layoutSize: 'wide' } // Metadata da rota (corrigido para 4)
       },
     ],
   },
@@ -50,6 +50,11 @@ const router = createBrowserRouter([
     path: '/dashboard',
     element: <Dashboard />,
   },
+  { 
+        path: 'summary', 
+        element: <SummaryStep />, 
+        handle: { step: 5, layoutSize: 'narrow' } // Adicione a rota de resumo
+      }
 ]);
 
 // --- Router Component ---

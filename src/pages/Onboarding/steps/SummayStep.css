@@ -1,0 +1,61 @@
+/* src/pages/Onboarding/steps/SummaryStep.css */
+
+.summary-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.summary-icon {
+  font-size: 48px;
+}
+
+.summary-container h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.summary-container p {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  margin-bottom: 16px;
+}
+
+.summary-details,
+.next-steps {
+  width: 100%;
+  max-width: 400px;
+  background-color: #F9FAFB;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 24px;
+  text-align: left;
+}
+
+.summary-details h4,
+.next-steps h4 {
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.summary-details ul,
+.next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.next-steps ul {
+  list-style: '✔  '; /* Adiciona um checkmark antes de cada item */
+  padding-left: 1.2em;
+}
+
+.summary-details li,
+.next-steps li {
+  color: var(--color-text-secondary);
+}

@@ -28,7 +28,7 @@ const IntegrationsStep = () => {
   // --- Functions ---
   const handleNext = () => {
     console.log("Selected Integration:", selectedIntegration);
-    // navigate('/onboarding/portfolio');
+    navigate('/onboarding/portfolio'); // CORREÇÃO: Linha descomentada
   };
   
   const handleBack = () => {
