@@ -1,0 +1,31 @@
+/* src/styles/variables.css */
+
+/* Organizational Comments:
+  - Font Imports
+  - Root Variables (New Light Theme Palette)
+*/
+
+/* --- Font Imports --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* --- Root Variables --- */
+:root {
+  /* Font */
+  --font-primary: 'Poppins', sans-serif;
+
+  /* New Color Palette */
+  --color-primary: #6D28D9; /* Roxo vibrante principal */
+  --color-primary-light: #EDE9FE;
+
+  --color-background-light: #FFFFFF;
+  --color-surface: #FFFFFF; /* Superfície dos cards */
+
+  --color-text-primary: #1F2937; /* Preto suave para texto principal */
+  --color-text-secondary: #6B7280; /* Cinza para texto secundário */
+  
+  --color-border: #E5E7EB; /* Cinza claro para bordas */
+
+  /* Sizing & Radius */
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+}

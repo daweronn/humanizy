@@ -1,0 +1,44 @@
+/* src/components/common/Button/Button.css */
+
+/* Organizational Comments:
+  - Base Button Styles
+  - Primary Button Variant
+  - Secondary Button Variant
+*/
+
+/* --- Base Button Styles --- */
+.btn {
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%; /* Botões ocupam a largura total do container */
+}
+
+/* --- Primary Button Variant --- */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  filter: brightness(110%);
+}
+
+/* --- Secondary Button Variant --- */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}

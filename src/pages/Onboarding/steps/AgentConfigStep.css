@@ -1,0 +1,67 @@
+/* src/pages/Onboarding/steps/AgentConfigStep.css */
+
+.form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.form-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.form-header p {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.selection-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.form-row > * {
+  flex: 1; /* Makes children share space equally */
+}
+
+.form-navigation {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* Override para o botão secundário no rodapé */
+.form-navigation .btn-secondary {
+  background-color: var(--color-border);
+  width: auto; /* Ajusta a largura para não ocupar 100% */
+  padding: 16px 24px;
+}
+.form-navigation .btn-secondary:hover {
+  background-color: #E5E7EB;
+}
+.form-navigation .btn-primary {
+   width: 100%;
+}

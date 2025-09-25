@@ -1,0 +1,58 @@
+/* src/pages/Onboarding/steps/IntegrationsStep.css */
+
+/* Organizational Comments:
+  - Container Styles
+  - Integrations List (Grid Layout)
+*/
+
+.integrations-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --- Integrations List (Grid Layout) --- */
+.integrations-list {
+  display: grid; /* Usando CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 3 colunas em telas maiores */
+  gap: 20px; /* Espaçamento entre os cards */
+  justify-content: center; /* Centraliza os cards caso não preencham a linha */
+}
+
+/* Garante que o cabeçalho fique centralizado na largura total */
+.form-header {
+  text-align: center;
+  margin-bottom: 24px; /* Ajusta o espaçamento abaixo do cabeçalho */
+}
+
+/* Ajustes para o card de integração */
+.integration-card {
+  height: 100%; /* Garante que todos os cards tenham a mesma altura em uma linha */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Empurra tags para baixo */
+}
+
+.integration-card .card-header {
+  margin-bottom: 12px; /* Reduz espaçamento interno do header do card */
+}
+
+.integration-card .card-tags {
+  margin-top: auto; /* Empurra as tags para a parte inferior do card */
+}
+
+/* Opcional: ajustar tamanho do ícone para o novo layout */
+.card-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.onboarding-card .integrations-step-wrapper {
+  width: 100%; /* Garante que o wrapper preencha o novo espaço */
+}
+
+.integrations-step-wrapper .onboarding-card {
+  max-width: 900px;
+}

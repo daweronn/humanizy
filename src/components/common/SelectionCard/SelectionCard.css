@@ -1,0 +1,58 @@
+/* src/components/common/SelectionCard/SelectionCard.css */
+
+.selection-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #F9FAFB;
+}
+
+.selection-card:hover {
+  border-color: var(--color-primary);
+}
+
+.selection-card.checked {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.1);
+}
+
+.radio-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease;
+}
+
+.selection-card.checked .radio-indicator {
+  border-color: var(--color-primary);
+}
+
+.radio-indicator::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+.selection-card.checked .radio-indicator::after {
+  transform: scale(1);
+}
+
+.selection-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}

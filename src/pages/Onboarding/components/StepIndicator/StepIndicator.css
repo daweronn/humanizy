@@ -1,0 +1,71 @@
+/* src/pages/Onboarding/components/StepIndicator/StepIndicator.css */
+
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+}
+
+.step-item:last-child .step-line-container {
+  display: none; /* Esconde a linha depois do último passo */
+}
+
+/* --- Estilos do Ponto --- */
+.step-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF; /* O checkmark será branco */
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.step-dot.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.step-dot.completed {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* --- Estilos da Linha --- */
+.step-line-container {
+  width: 40px;
+  height: 4px;
+  background-color: var(--color-border);
+  border-radius: 2px;
+  margin: 0 -2px; /* Pequeno ajuste para sobrepor levemente os pontos */
+  position: relative;
+  z-index: 1;
+}
+
+.step-line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0; /* Começa sem preenchimento */
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  transition: width 0.4s ease; /* A MÁGICA DA ANIMAÇÃO! */
+}
+
+.step-line-fill.completed {
+  width: 100%; /* Preenche a linha quando o passo é concluído */
+}
